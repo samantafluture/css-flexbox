@@ -1,0 +1,61 @@
+=======
+FLEXBOX
+=======
+
+# primeira coisa a se pensar
+- quem é o pai dos elementos que quero alinhar?
+- é neste pai em que devo definir o flex
+- assim seus filhos seguirão isso
+- filhos ficam com a mesma altura
+
+# receita de bolo para o pai do logo+nav
+- display: flex; -> um do lado do outro 
+- align-items: center; -> alinha verticalmente no centro */
+- justify-content: space-between; -> alinha horizontalmente, com espaço entre eles */
+
+# alinhando itens do menu nav
+- quem eu quero alinhar? os itens/links do menu
+- quem é o pai deles? -> o nav
+- então aplica flex nele!
+
+# flex-direction
+- row: padrão, na horizontal -> um do lado do outro
+- column: na vertical -> um embaixo do outro
+
+# flex-wrap
+- wrap: não coube no pai, vai pra próxima coluna
+- wrap: quebra pra próxima linha
+- nowrap: fica na mesma linha, diminuindo pra caber
+- vai ficando do ladinho um do outro quando não cabe na altura total falada
+- mesmo vale pra largura, caso esteja direction row
+
+# column
+- quando vc muda a direção (flex-direction), todas as outroas propriedades INVERTEM
+- o align-items passa a valer na horizontal
+- o justify-content passa a valer na vertical 
+- isso pq vc inverteu os eixos!
+- responsivo mobile -> normalmente usa bastante columns
+
+# order
+- se eu quero um item que venha antes coloco order -1 já que todos são por padrão 0
+- é no filho que a gente define a ordem, no elemento em questão que quer mudar a ordem
+
+# flex-grow
+- flex-grow: 1; -> faz o elemento em si (filho) ocupar o máximo de tamanho possível que sobrou no elemento pai
+- ex: flex-grow: 2; /* divide o espaço pai em 3 partes e duas delas este elemento que preenche
+
+# flex-shrink
+- quanto maior, mais o elemento encolhe
+- ex: flex-shrink: 2; -> este elemento irá encolher duas vezes mais que o outro(s)
+- se for 0, o tamanho se mantém mesmo diminuindo a página
+
+# flex-basis
+- define a largura dos elementos fixa
+- igual ao width
+- ex: flex-basos: 250 px (todos ficam com este tamanho)
+- ex 2: flex-basis: 20% (todos ficam com 20% do tamanho)
+- flex-basis tem mais prioridade e especificidde que o width
+- então não acontece de sobreescrever
+
+# atalho grow + shrink + basis
+- ex: flex: 1 2 25%;
